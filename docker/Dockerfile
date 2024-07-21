@@ -1,7 +1,8 @@
 # STEP1: CLONE THE CODE
 FROM alpine:latest as builder_prepare
 WORKDIR /home/
-COPY . .
+RUN mkdir filestash
+COPY . filestash/
 
 # STEP2: BUILD THE FRONTEND
 FROM node:18-alpine AS builder_frontend
